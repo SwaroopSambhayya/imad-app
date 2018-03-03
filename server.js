@@ -15,7 +15,11 @@ app.get('/ui/style.css', function (req, res) {
 app.get('/article-one',function(req,res){
     res.send('THIS IS ARTICLE ONE');
 });
-
+count=0;
+app.get('/counter',function(req,res){
+    count=count+1;
+    res.send(count.toString());
+});
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
